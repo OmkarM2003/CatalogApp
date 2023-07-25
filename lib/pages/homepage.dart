@@ -10,8 +10,8 @@ class homepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 75,
-        title: const Text("Catalog  App",
-        style: TextStyle(fontWeight: FontWeight.bold),)
+        title: const Text("Catalog App",
+        style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),)
       ),
       body: Center(
         child: Container(
