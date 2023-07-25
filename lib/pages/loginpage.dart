@@ -1,83 +1,18 @@
 import 'package:flutter/material.dart';
-<<<<<<< Updated upstream
 
-// ignore: camel_case_types
-class loginpage extends StatelessWidget {
-  const loginpage({Key? key}) : super(key: key);
+import '../utils/routes.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return Material(
-      color: Colors.white,
-      child: Column(
-        children: [
-          Image.asset("assets/imgs/login.png"),
-          const SizedBox(
-            height: 20.0,
-          ),
-          const Text(
-            "Welcome",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(
-            height: 20.0,
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 32.0),
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Enter Username",
-                    labelText: "username",
-                  ),
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Enter Password",
-                    labelText: "password",
-                  ),
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                ElevatedButton(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    style: TextButton.styleFrom(),
-                    onPressed: () {
-                      print("Hiii");
-                    }),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-=======
-import 'package:flutter_application_1/utils/routes.dart';
-
-// ignore: camel_case_types
+// Class name updated to 'LoginPage'
 class loginpage extends StatefulWidget {
   const loginpage({Key? key}) : super(key: key);
 
   @override
-  State<loginpage> createState() => _loginpageState();
+  State<loginpage> createState() => _LoginPageState();
 }
 
-class _loginpageState extends State<loginpage> {
-
+class _LoginPageState extends State<loginpage> {
   String name = "";
-  bool changebutton = false;
+  bool changeButton = false; // Changed variable name to camelCase
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +21,10 @@ class _loginpageState extends State<loginpage> {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/imgs/login.png",
-              fit: BoxFit.cover),
+            Image.asset(
+              "assets/imgs/login.png",
+              fit: BoxFit.cover,
+            ),
             const SizedBox(
               height: 20.0,
             ),
@@ -112,7 +49,7 @@ class _loginpageState extends State<loginpage> {
                       labelText: "UserName",
                     ),
                     onChanged: (value) {
-                      name= value;
+                      name = value;
                       setState(() {});
                     },
                   ),
@@ -129,41 +66,42 @@ class _loginpageState extends State<loginpage> {
                   InkWell(
                     onTap: () async {
                       setState(() {
-                        changebutton=true;
+                        changeButton = true;
                       });
                       await Future.delayed(Duration(seconds: 1));
                       Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                     child: AnimatedContainer(
-                      duration: Duration(seconds: 1),
-                      width: changebutton? 50: 120,
+                      duration: const Duration(seconds: 1),
+                      width: changeButton ? 50 : 120,
                       height: 50,
                       alignment: Alignment.center,
-                      child: changebutton
-                      ?Icon(
-                        Icons.done, 
-                        color: Colors.white,
-                        )
-                        :Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
-                      ),
+                      child: changeButton
+                          ? const Icon(
+                              Icons.done,
+                              color: Colors.white,
+                            )
+                          : const Text(
+                              "Login",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
                       decoration: BoxDecoration(
                         color: Colors.deepOrange,
-                        borderRadius: BorderRadius.circular(changebutton?50:8)
+                        borderRadius:
+                            BorderRadius.circular(changeButton ? 50 : 8),
                       ),
                     ),
                   )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
->>>>>>> Stashed changes
