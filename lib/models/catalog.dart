@@ -1,33 +1,97 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
 class CatalogModel {
-  static final items = [
-    Item(
-      id: "01",
-      name: "Iphone 12 Pro",
-      desc: "Apple Iphone 12th generation",
-      price: 149999,
-      color: "#33505a",
-      image:
-          "https://images.hindustantimes.com/tech/htmobile4/P34241/images/Design/136139-v4-apple-iphone-12-mobile-phone-large-5.jpg",
-    ),
-    Item(
-      id: "02",
-      name: "Google Pixel 6",
-      desc: "Google's Latest Phone",
-      price: 45999,
-      color: "#33505a",
-      image:
-          "https://cdn1.smartprix.com/rx-iHkpHY9pu-w1200-h1200/HkpHY9pu.jpg",
-    )
-  ];
+  static List<Item> items = [];
 }
 
 class Item {
-  final String id;
+  final int id; // Change the type to int
   final String name;
   final String desc;
-  final num price;
+  final int price; // Change the type to int
   final String color;
   final String image;
 
-  Item({required this.id, required this.name, required this.desc, required this.price, required this.color, required this.image});
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.image,
+  });
+
+
+  Item copyWith({
+    int? id,
+    String? name,
+    String? desc,
+    int? price,
+    String? color,
+    String? image,
+  }) {
+    return Item(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      desc: desc ?? this.desc,
+      price: price ?? this.price,
+      color: color ?? this.color,
+      image: image ?? this.image,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'name': name,
+      'desc': desc,
+      'price': price,
+      'color': color,
+      'image': image,
+    };
+  }
+
+  factory Item.fromMap(Map<String, dynamic> map) {
+    return Item(
+      id: map['id'] as int,
+      name: map['name'] as String,
+      desc: map['desc'] as String,
+      price: map['price'] as int,
+      color: map['color'] as String,
+      image: map['image'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Item.fromJson(String source) => Item.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'Item(id: $id, name: $name, desc: $desc, price: $price, color: $color, image: $image)';
+  }
+
+  @override
+  bool operator ==(covariant Item other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other.id == id &&
+      other.name == name &&
+      other.desc == desc &&
+      other.price == price &&
+      other.color == color &&
+      other.image == image;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+      name.hashCode ^
+      desc.hashCode ^
+      price.hashCode ^
+      color.hashCode ^
+      image.hashCode;
+  }
 }
