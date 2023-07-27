@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/models/catalog.dart';
-import 'package:flutter_application_1/utils/routes.dart';
-import 'package:flutter_application_1/widgets/themes.dart'; // Import velocity_x
+import 'package:flutter_application_1/utils/routes.dart';// Import velocity_x
 import 'package:velocity_x/velocity_x.dart';
 
 import '../widgets/home_widgets/catalog_header.dart';
@@ -25,7 +24,7 @@ class _homepageState extends State<homepage> {
   }
 
   loaddata() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodeData = jsonDecode(catalogJson);

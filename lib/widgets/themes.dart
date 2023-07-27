@@ -8,7 +8,6 @@ class MyTheme {
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: MyTheme.Color2,
         canvasColor: MyTheme.Color3,
-        primaryColor: MyTheme.Color1,
         appBarTheme: const AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
@@ -27,11 +26,10 @@ class MyTheme {
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: MyTheme.Color3,
         canvasColor: MyTheme.Dark,
-        primaryColor: MyTheme.Color1,
         appBarTheme: const AppBarTheme(
           color: Colors.black,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.white),
           titleTextStyle: TextStyle(
             color: Colors.black,
             // Set your desired TextStyle properties here

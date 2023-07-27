@@ -15,9 +15,9 @@ class HomeDetailPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      backgroundColor: MyTheme.Color3,
+      backgroundColor: context.theme.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.theme.canvasColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -46,21 +46,21 @@ class HomeDetailPage extends StatelessWidget {
             arcType: VxArcType.convey,
             edge: VxEdge.top,
             child: Container(
-              color: Colors.white,
+              color: context.theme.canvasColor,
               width: context.screenWidth,
               child: Column(
                 children: [
-                  catalog.name.text.lg.xl4.bold.make(),
-                  catalog.desc.text.xl.textStyle(context.captionStyle).make(),
+                  catalog.name.text.color(context.theme.cardColor).lg.xl4.bold.make(),
+                  catalog.desc.text.color(context.theme.cardColor).xl.textStyle(context.captionStyle).make(),
                   30.heightBox,
                   "omkar If you're using Windows or Linux, the equivalent keyboard shortcut is Ctrl + Shift + V."
-                  .text.textStyle(context.captionStyle).make().px16()
+                  .text.color(context.theme.cardColor).textStyle(context.captionStyle).make().px16()
                 ],
               ).py64(),
             ),
           ))
         ]),
-      ).color(Color.fromARGB(255, 213, 208, 208)),
+      ).color(context.theme.cardColor),
     );
   }
 }

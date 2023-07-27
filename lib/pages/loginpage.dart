@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../utils/routes.dart';
 
@@ -31,7 +32,7 @@ class _LoginPageState extends State<loginpage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.theme.canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -46,9 +47,10 @@ class _LoginPageState extends State<loginpage> {
               ),
               Text(
                 "Welcome $name",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
+                  color: context.theme.cardColor,
                 ),
               ),
               const SizedBox(
@@ -62,10 +64,20 @@ class _LoginPageState extends State<loginpage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "Enter Username",
-                        labelText: "UserName",
+                        labelText: "Username",
+                        hintStyle: TextStyle(
+                            color: context
+                                .theme.cardColor), // Change the hint text color
+                        labelStyle: TextStyle(color: context.theme.cardColor),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                              color: context.theme
+                                  .cardColor), // Change the underline color
+                        ),
                       ),
+                      style: TextStyle(color: context.theme.cardColor),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Username cannot be empty";
@@ -79,10 +91,18 @@ class _LoginPageState extends State<loginpage> {
                     ),
                     TextFormField(
                       obscureText: true,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "Enter Password",
                         labelText: "Password",
+                        hintStyle: TextStyle(
+                            color: context
+                                .theme.cardColor), // Change the hint text color
+                        labelStyle: TextStyle(color: context.theme.cardColor),
+                        focusedBorder: UnderlineInputBorder(
+                            borderSide:
+                                BorderSide(color: context.theme.cardColor)),
                       ),
+                      style: TextStyle(color: context.theme.cardColor),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Password cannot be empty";
@@ -96,7 +116,7 @@ class _LoginPageState extends State<loginpage> {
                       height: 20.0,
                     ),
                     Material(
-                      color: Colors.deepOrange,
+                      color: context.theme.cardColor,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
@@ -108,14 +128,14 @@ class _LoginPageState extends State<loginpage> {
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? const Icon(
+                              ? Icon(
                                   Icons.done,
-                                  color: Colors.white,
+                                  color: context.theme.canvasColor,
                                 )
-                              : const Text(
+                              : Text(
                                   "Login",
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: context.theme.canvasColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                   ),

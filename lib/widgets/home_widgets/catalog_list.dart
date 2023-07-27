@@ -15,7 +15,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.getByPosition(index);
         // Use the ValueKey to uniquely identify each CatalogItem
         return InkWell(
           onTap: () => Navigator.push(
@@ -58,13 +58,20 @@ class CatalogItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             catalog.name.text.color(context.theme.cardColor).lg.bold.make(),
-            catalog.desc.text.color(context.theme.cardColor).textStyle(context.captionStyle).make(),
+            catalog.desc.text
+                .color(context.theme.cardColor)
+                .textStyle(context.captionStyle)
+                .make(),
             30.heightBox,
             ButtonBar(
               alignment: MainAxisAlignment.spaceBetween,
               buttonPadding: EdgeInsets.zero,
               children: [
-                "\₹${catalog.price}".text.color(context.theme.cardColor).bold.make(),
+                "\₹${catalog.price}"
+                    .text
+                    .color(context.theme.cardColor)
+                    .bold
+                    .make(),
                 ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
