@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/cartpage.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/pages/loginpage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) =>
             homepage(key: UniqueKey()), // Pass a unique key
         MyRoutes.loginRoute: (context) => const loginpage(),
+        MyRoutes.cartRoute: (context) => const CartPage(),
       },
     );
   }

@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:flutter_application_1/models/catalog.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart'; // Import velocity_x
 import 'package:velocity_x/velocity_x.dart';
 
@@ -38,6 +40,11 @@ class _homepageState extends State<homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheme.Color3,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          child: Icon(CupertinoIcons.cart).iconColor(Colors.white),
+          backgroundColor: MyTheme.Color2,
+        ),
         body: SafeArea(
           // ignore: avoid_unnecessary_containers
           child: Container(
