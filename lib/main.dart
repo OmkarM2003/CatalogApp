@@ -11,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      theme: ThemeData(primarySwatch: Colors.grey),
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        MyRoutes.homeRoute: (context) => homepage(key: UniqueKey()), // Pass a unique key
+        MyRoutes.homeRoute: (context) =>
+            homepage(key: UniqueKey()), // Pass a unique key
         MyRoutes.loginRoute: (context) => const loginpage(),
       },
     );
