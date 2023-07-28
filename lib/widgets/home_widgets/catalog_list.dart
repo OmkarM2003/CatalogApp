@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/models/catalog.dart';
 import 'package:flutter_application_1/pages/home_detail_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../themes.dart';
+import 'add_to_cart.dart';
 import 'catalog_image.dart';
 
 class CatalogList extends StatelessWidget {
@@ -15,7 +17,7 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.getByPosition(index);
+        final catalog = CatalogModel.items[index];
         // Use the ValueKey to uniquely identify each CatalogItem
         return InkWell(
           onTap: () => Navigator.push(
@@ -72,15 +74,7 @@ class CatalogItem extends StatelessWidget {
                     .color(context.theme.cardColor)
                     .bold
                     .make(),
-                ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(MyTheme.Color2),
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(StadiumBorder())),
-                    child: "Add To cart".text.make())
+                Addtocart(catalog:catalog)
               ],
             ).pOnly(right: 10.0)
           ],
@@ -89,3 +83,5 @@ class CatalogItem extends StatelessWidget {
     )).color(context.theme.highlightColor).rounded.square(150).make().py16();
   }
 }
+
+
