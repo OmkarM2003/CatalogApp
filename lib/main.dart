@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        MyRoutes.homeRoute: (context) => homepage(key: UniqueKey()),
+        MyRoutes.homeRoute: (context) => homepage(),
         MyRoutes.loginRoute: (context) => const loginpage(),
         MyRoutes.cartRoute: (context) => const CartPage(),
       },
