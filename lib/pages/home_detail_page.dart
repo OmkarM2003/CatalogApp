@@ -24,7 +24,9 @@ class HomeDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\₹${catalog.price}/-".text.bold.xl3.color(Colors.red).make(),
-            Addtocart(catalog: catalog,).wh(130, 50)
+            Addtocart(
+              catalog: catalog,
+            ).wh(130, 50)
           ],
         ).p32(),
       ),
@@ -45,13 +47,26 @@ class HomeDetailPage extends StatelessWidget {
               width: context.screenWidth,
               child: Column(
                 children: [
-                  catalog.name.text.color(context.theme.cardColor).lg.xl4.bold.make(),
-                  catalog.desc.text.color(context.theme.cardColor).xl.textStyle(context.captionStyle).make(),
+                  catalog.name.text
+                      .color(context.theme.cardColor)
+                      .lg
+                      .xl4
+                      .bold
+                      .make(),
+                  catalog.desc.text
+                      .color(context.theme.cardColor)
+                      .xl
+                      .textStyle(context.captionStyle)
+                      .make(),
                   30.heightBox,
-                  "omkar If you're using Windows or Linux, the equivalent keyboard shortcut is Ctrl + Shift + V."
-                  .text.color(context.theme.cardColor).textStyle(context.captionStyle).make().px16()
+                  '''Introducing the revolutionary product that will change your life forever! Say hello to the incredible ${catalog.name} Are you tired of dealing with everyday Are you tired of dealing with everyday hassles and inefficiencies? ${catalog.name} is here to save the day!  With its cutting-edge technology and sleek design, this product is a game-changer in the market.'''
+                      .text
+                      .color(context.theme.cardColor)
+                      .textStyle(context.captionStyle)
+                      .make()
+                      .px16()
                 ],
-              ).py64(),
+              ).py32(),
             ),
           ))
         ]),
