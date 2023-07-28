@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/store.dart';
 import 'package:flutter_application_1/pages/cartpage.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:flutter_application_1/pages/loginpage.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(),child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,8 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        MyRoutes.homeRoute: (context) =>
-            homepage(key: UniqueKey()), // Pass a unique key
+        MyRoutes.homeRoute: (context) => homepage(key: UniqueKey()),
         MyRoutes.loginRoute: (context) => const loginpage(),
         MyRoutes.cartRoute: (context) => const CartPage(),
       },

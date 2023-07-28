@@ -64,7 +64,7 @@ class CatalogItem extends StatelessWidget {
                 .color(context.theme.cardColor)
                 .textStyle(context.captionStyle)
                 .make(),
-            30.heightBox,
+            10.heightBox,
             ButtonBar(
               alignment: MainAxisAlignment.spaceBetween,
               buttonPadding: EdgeInsets.zero,
