@@ -1,5 +1,5 @@
 ![Screenshot_1690607224](https://github.com/omkar20003/CatalogApp/assets/108979154/e0c662d8-e379-4b35-94be-1f4ea3d708ea)
-![Screenshot_1690607277](https://github.com/omkar20003/CatalogApp/assets/108979154/dc6de987-4750-412d-9148-22389ed02ad9)
+![Screenshot_1690607350](https://github.com/omkar20003/CatalogApp/assets/108979154/355e16b0-455d-4f2c-bf86-ec983a123493)
 ![Screenshot_1690607298](https://github.com/omkar20003/CatalogApp/assets/108979154/261279a1-dcd5-47bf-bea6-226360849779)
 ![Screenshot_1690607282](https://github.com/omkar20003/CatalogApp/assets/108979154/924cbb54-902a-4454-b011-7e421e5a64b7)
 ![Screenshot_1690607285](https://github.com/omkar20003/CatalogApp/assets/108979154/2462b6a5-760e-4c47-bfcb-92390511bed9)
