@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/homepage.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import '../utils/routes.dart';
@@ -22,7 +23,10 @@ class _LoginPageState extends State<loginpage> {
         changeButton = true;
       });
       await Future.delayed(const Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      await Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => homepage()),
+      );
       setState(() {
         changeButton = false;
       });
